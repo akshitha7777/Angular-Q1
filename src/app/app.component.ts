@@ -8,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 })
 
 export class AppComponent implements OnInit {
+  p : number = 1;
   userId = '' ;
   id = '1';
   title = 'question1-angular';

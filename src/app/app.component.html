@@ -1,8 +1,11 @@
 <div style="text-align:center">
-  <h1>
-    Welcome to Angular!
+  <h1 style="color: #009879;">
+    Welcome to Angular Table!
   </h1>
- </div>
+</div>
+<div class="pageclass">
+  <pagination-controls class="pageclass" (pageChange)="p = $event"></pagination-controls>
+</div>
 
  <table class="styled-table">
    <thead>
@@ -12,9 +15,11 @@
        <th>Title</th>
        <th>Body</th>
      </tr>
+
    </thead>
    <tbody>
-     <tr *ngFor="let image of data">
+    
+     <tr *ngFor="let image of data | paginate: { itemsPerPage: 10, currentPage: p }">
        <td>{{image.userId}}</td>
        <td>{{image.id}}</td>
        <td>{{image.title}}</td>
